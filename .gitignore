@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv*/
+venv*/
+.pytest_cache/
+.ruff_cache/
+
+# Build output (PyInstaller, setuptools)
+build/
+dist/
+*.spec
+
+# Test fixtures are downloaded, never committed (scripts/fetch_test_data.py)
+tests/data/
+
+# Evidence and generated reports must never end up in the repository
+*.pst
+*.ost
+*.mbox
+*.mbx
+*_errors.log
+recovery_log.txt
+recovery_report.json
+recovered_items.csv
+*_expected_manifest.*
+
+# ...except the synthetic known-answer fixture made with pst-testgen
+!tests/fixtures/known_answer.pst
+!tests/fixtures/known_answer_expected_manifest.json

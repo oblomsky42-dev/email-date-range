@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "generator": "pst-testgen 1.0.0",
+  "pst_file": "known_answer.pst",
+  "generated_utc": "2026-10-01T19:24:43+00:00",
+  "seed": 20261001,
+  "parameters": {
+    "count": 400,
+    "target_gb": 1.0,
+    "start_year": 2015,
+    "end_year": 2025,
+    "attach_every": 50,
+    "attach_mb": 0,
+    "body_kb": 1,
+    "delete_pct": 10.0,
+    "delete_mode": "both"
+  },
+  "total_messages_created": 400,
+  "year_range": [
+    2015,
+    2025
+  ],
+  "by_year_all_created": {
+    "2015": 8,
+    "2016": 17,
+    "2017": 28,
+    "2018": 40,
+    "2019": 43,
+    "2020": 62,
+    "2021": 57,
+    "2022": 44,
+    "2023": 51,
+    "2024": 28,
+    "2025": 22
+  },
+  "expected": {
+    "plain_scan": {
+      "note": "a scan without recovery sees live and soft-deleted messages",
+      "total_messages": 380,
+      "by_year": {
+        "2015": 8,
+        "2016": 16,
+        "2017": 27,
+        "2018": 40,
+        "2019": 40,
+        "2020": 61,
+        "2021": 52,
+        "2022": 39,
+        "2023": 48,
+        "2024": 27,
+        "2025": 22
+      },
+      "by_month": {
+        "2015-02": 1,
+        "2015-05": 1,
+        "2015-07": 1,
+        "2015-08": 1,
+        "2015-09": 1,
+        "2015-10": 3,
+        "2016-01": 1,
+        "2016-02": 3,
+        "2016-03": 2,
+        "2016-04": 2,
+        "2016-06": 1,
+        "2016-07": 1,
+        "2016-08": 1,
+        "2016-09": 1,
+        "2016-10": 1,
+        "2016-11": 1,
+        "2016-12": 2,
+        "2017-01": 4,
+        "2017-02": 5,
+        "2017-03": 3,
+        "2017-04": 1,
+        "2017-05": 2,
+        "2017-06": 4,
+        "2017-08": 1,
+        "2017-09": 3,
+        "2017-10": 1,
+        "2017-11": 3,
+        "2018-01": 6,
+        "2018-02": 1,
+        "2018-03": 3,
+        "2018-04": 2,
+        "2018-05": 4,
+        "2018-06": 1,
+        "2018-07": 3,
+        "2018-08": 5,
+        "2018-09": 4,
+        "2018-10": 5,
+        "2018-11": 1,
+        "2018-12": 5,
+        "2019-01": 3,
+        "2019-02": 1,
+        "2019-03": 5,
+        "2019-04": 6,
+        "2019-05": 3,
+        "2019-06": 4,
+        "2019-07": 3,
+        "2019-08": 3,
+        "2019-09": 3,
+        "2019-10": 2,
+        "2019-11": 3,
+        "2019-12": 4,
+        "2020-01": 4,
+        "2020-02": 4,
+        "2020-03": 5,
+        "2020-04": 1,
+        "2020-05": 5,
+        "2020-06": 2,
+        "2020-07": 4,
+        "2020-08": 7,
+        "2020-09": 8,
+        "2020-10": 8,
+        "2020-11": 7,
+        "2020-12": 6,
+        "2021-01": 5,
+        "2021-02": 2,
+        "2021-03": 5,
+        "2021-04": 5,
+        "2021-05": 5,
+        "2021-06": 4,
+        "2021-07": 4,
+        "2021-08": 5,
+        "2021-09": 3,
+        "2021-10": 3,
+        "2021-11": 6,
+        "2021-12": 5,
+        "2022-01": 2,
+        "2022-02": 6,
+        "2022-03": 3,
+        "2022-05": 1,
+        "2022-06": 5,
+        "2022-07": 3,
+        "2022-08": 2,
+        "2022-09": 2,
+        "2022-10": 8,
+        "2022-11": 2,
+        "2022-12": 5,
+        "2023-01": 3,
+        "2023-02": 4,
+        "2023-03": 3,
+        "2023-04": 6,
+        "2023-05": 3,
+        "2023-06": 5,
+        "2023-07": 7,
+        "2023-08": 1,
+        "2023-09": 4,
+        "2023-10": 6,
+        "2023-11": 3,
+        "2023-12": 3,
+        "2024-01": 3,
+        "2024-02": 2,
+        "2024-03": 2,
+        "2024-04": 3,
+        "2024-05": 2,
+        "2024-07": 3,
+        "2024-08": 4,
+        "2024-09": 1,
+        "2024-10": 2,
+        "2024-11": 4,
+        "2024-12": 1,
+        "2025-02": 2,
+        "2025-03": 2,
+        "2025-04": 4,
+        "2025-05": 3,
+        "2025-07": 2,
+        "2025-08": 2,
+        "2025-09": 1,
+        "2025-10": 5,
+        "2025-11": 1
+      }
+    },
+    "recover_scan": {
+      "note": "a scan that also reads orphaned nodes may add some of the hard-deleted messages - between 0 and max_additional_recovered, every one listed in deletions.hard_deleted_items. Outlook 2016+ normally leaves none.",
+      "max_total_messages": 400,
+      "max_additional_recovered": 20,
+      "by_year_if_all_recovered": {
+        "2015": 8,
+        "2016": 17,
+        "2017": 28,
+        "2018": 40,
+        "2019": 43,
+        "2020": 62,
+        "2021": 57,
+        "2022": 44,
+        "2023": 51,
+        "2024": 28,
+        "2025": 22
+      }
+    }
+  },
+  "deletions": {
+    "enabled": true,
+    "mode": "both",
+    "requested_pct": 10.0,
+    "soft_deleted_count": 20,
+    "hard_deleted_count": 20,
+    "failed_operations": 0,
+    "hard_deleted_by_year": {
+      "2016": 1,
+      "2017": 1,
+      "2019": 3,
+      "2020": 1,
+      "2021": 5,
+      "2022": 5,
+      "2023": 3,
+      "2024": 1
+    },
+    "soft_deleted_items": [
+      {
+        "subject": "[2024-11-27] Test message 31 from legal@corp.example.com",
+        "date": "2024-11-27 07:10:03",
+        "message_id": "<test-20261001-31@pst-testgen.example>"
+      },
+      {
+        "subject": "[2019-09-14] Test message 69 from external.partner@vendor.example",
+        "date": "2019-09-14 15:45:38",
+        "message_id": "<test-20261001-69@pst-testgen.example>"
+      },
+      {
+        "subject": "[2020-09-30] Test message 98 from p.anderson@example.com",
+        "date": "2020-09-30 19:35:25",
+        "message_id": "<test-20261001-98@pst-testgen.example>"
+      },
+      {
+        "subject": "[2025-05-05] Test message 104 from legal@corp.example.com",
+        "date": "2025-05-05 16:55:29",
+        "message_id": "<test-20261001-104@pst-testgen.example>"
+      },
+      {
+        "subject": "[2018-05-12] Test message 115 from p.anderson@example.com",
+        "date": "2018-05-12 16:02:35",
+        "message_id": "<test-20261001-115@pst-testgen.example>"
+      },
+      {
+        "subject": "[2020-05-14] Test message 119 from r.taylor@example.com",
+        "date": "2020-05-14 07:56:59",
+        "message_id": "<test-20261001-119@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-12-22] Test message 142 from p.anderson@example.com",
+        "date": "2021-12-22 20:03:09",
+        "message_id": "<test-20261001-142@pst-testgen.example>"
+      },
+      {
+        "subject": "[2022-03-19] Test message 145 from p.anderson@example.com",
+        "date": "2022-03-19 02:50:15",
+        "message_id": "<test-20261001-145@pst-testgen.example>"
+      },
+      {
+        "subject": "[2025-04-23] Test message 158 from l.moore@example.com",
+        "date": "2025-04-23 08:06:27",
+        "message_id": "<test-20261001-158@pst-testgen.example>"
+      },
+      {
+        "subject": "[2018-01-18] Test message 186 from d.jackson@example.com",
+        "date": "2018-01-18 21:19:01",
+        "message_id": "<test-20261001-186@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-12-25] Test message 190 from l.moore@example.com",
+        "date": "2021-12-25 23:25:15",
+        "message_id": "<test-20261001-190@pst-testgen.example>"
+      },
+      {
+        "subject": "[2018-07-31] Test message 272 from legal@corp.example.com",
+        "date": "2018-07-31 02:56:04",
+        "message_id": "<test-20261001-272@pst-testgen.example>"
+      },
+      {
+        "subject": "[2020-11-28] Test message 277 from s.davis@example.com",
+        "date": "2020-11-28 04:10:14",
+        "message_id": "<test-20261001-277@pst-testgen.example>"
+      },
+      {
+        "subject": "[2023-02-23] Test message 317 from p.anderson@example.com",
+        "date": "2023-02-23 06:02:36",
+        "message_id": "<test-20261001-317@pst-testgen.example>"
+      },
+      {
+        "subject": "[2020-03-02] Test message 319 from a.jones@example.com",
+        "date": "2020-03-02 23:12:10",
+        "message_id": "<test-20261001-319@pst-testgen.example>"
+      },
+      {
+        "subject": "[2017-08-23] Test message 321 from s.davis@example.com",
+        "date": "2017-08-23 04:36:08",
+        "message_id": "<test-20261001-321@pst-testgen.example>"
+      },
+      {
+        "subject": "[2019-08-31] Test message 326 from c.thomas@example.com",
+        "date": "2019-08-31 19:43:28",
+        "message_id": "<test-20261001-326@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-06-10] Test message 340 from j.smith@example.com",
+        "date": "2021-06-10 04:55:00",
+        "message_id": "<test-20261001-340@pst-testgen.example>"
+      },
+      {
+        "subject": "[2017-06-03] Test message 358 from k.wilson@example.com",
+        "date": "2017-06-03 23:08:18",
+        "message_id": "<test-20261001-358@pst-testgen.example>"
+      },
+      {
+        "subject": "[2019-08-29] Test message 399 from s.davis@example.com",
+        "date": "2019-08-29 00:06:39",
+        "message_id": "<test-20261001-399@pst-testgen.example>"
+      }
+    ],
+    "hard_deleted_items": [
+      {
+        "subject": "[2022-11-27] Test message 8 from m.brown@example.com",
+        "date": "2022-11-27 19:00:48",
+        "message_id": "<test-20261001-8@pst-testgen.example>"
+      },
+      {
+        "subject": "[2016-07-20] Test message 21 from m.brown@example.com",
+        "date": "2016-07-20 12:26:24",
+        "message_id": "<test-20261001-21@pst-testgen.example>"
+      },
+      {
+        "subject": "[2023-03-09] Test message 26 from r.taylor@example.com",
+        "date": "2023-03-09 22:14:39",
+        "message_id": "<test-20261001-26@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-03-17] Test message 68 from k.wilson@example.com",
+        "date": "2021-03-17 08:53:01",
+        "message_id": "<test-20261001-68@pst-testgen.example>"
+      },
+      {
+        "subject": "[2023-06-28] Test message 79 from s.davis@example.com",
+        "date": "2023-06-28 15:24:00",
+        "message_id": "<test-20261001-79@pst-testgen.example>"
+      },
+      {
+        "subject": "[2022-03-24] Test message 95 from p.anderson@example.com",
+        "date": "2022-03-24 01:37:40",
+        "message_id": "<test-20261001-95@pst-testgen.example>"
+      },
+      {
+        "subject": "[2019-11-11] Test message 140 from c.thomas@example.com",
+        "date": "2019-11-11 10:00:04",
+        "message_id": "<test-20261001-140@pst-testgen.example>"
+      },
+      {
+        "subject": "[2022-09-18] Test message 149 from k.wilson@example.com",
+        "date": "2022-09-18 00:24:46",
+        "message_id": "<test-20261001-149@pst-testgen.example>"
+      },
+      {
+        "subject": "[2023-02-25] Test message 171 from p.anderson@example.com",
+        "date": "2023-02-25 09:05:02",
+        "message_id": "<test-20261001-171@pst-testgen.example>"
+      },
+      {
+        "subject": "[2022-02-19] Test message 227 from notifications@system.example",
+        "date": "2022-02-19 19:29:34",
+        "message_id": "<test-20261001-227@pst-testgen.example>"
+      },
+      {
+        "subject": "[2024-09-04] Test message 240 from k.wilson@example.com",
+        "date": "2024-09-04 20:43:36",
+        "message_id": "<test-20261001-240@pst-testgen.example>"
+      },
+      {
+        "subject": "[2020-06-12] Test message 243 from r.taylor@example.com",
+        "date": "2020-06-12 18:26:53",
+        "message_id": "<test-20261001-243@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-04-16] Test message 263 from j.smith@example.com",
+        "date": "2021-04-16 02:51:17",
+        "message_id": "<test-20261001-263@pst-testgen.example>"
+      },
+      {
+        "subject": "[2017-02-11] Test message 287 from c.thomas@example.com",
+        "date": "2017-02-11 06:08:35",
+        "message_id": "<test-20261001-287@pst-testgen.example>"
+      },
+      {
+        "subject": "[2019-12-02] Test message 318 from d.jackson@example.com",
+        "date": "2019-12-02 08:08:51",
+        "message_id": "<test-20261001-318@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-03-09] Test message 330 from l.moore@example.com",
+        "date": "2021-03-09 18:38:07",
+        "message_id": "<test-20261001-330@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-12-12] Test message 365 from k.wilson@example.com",
+        "date": "2021-12-12 20:07:25",
+        "message_id": "<test-20261001-365@pst-testgen.example>"
+      },
+      {
+        "subject": "[2021-04-09] Test message 381 from m.brown@example.com",
+        "date": "2021-04-09 11:01:19",
+        "message_id": "<test-20261001-381@pst-testgen.example>"
+      },
+      {
+        "subject": "[2019-05-25] Test message 388 from s.davis@example.com",
+        "date": "2019-05-25 22:49:17",
+        "message_id": "<test-20261001-388@pst-testgen.example>"
+      },
+      {
+        "subject": "[2022-02-12] Test message 395 from d.jackson@example.com",
+        "date": "2022-02-12 13:22:31",
+        "message_id": "<test-20261001-395@pst-testgen.example>"
+      }
+    ]
+  },
+  "warnings": [
+    "Do NOT compact this PST or let Outlook run maintenance on it - both rewrite the file, and the manifest then no longer describes it."
+  ]
+}

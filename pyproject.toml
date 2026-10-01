@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "email-date-range"
+dynamic = ["version"]
+description = "Date-range, timeline-gap and deleted-item triage for PST, OST and MBOX mail archives"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Nikita Kuznetsov" }]
+keywords = ["dfir", "forensics", "ediscovery", "pst", "ost", "mbox", "outlook", "email", "timeline"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Legal Industry",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Communications :: Email",
+    "Topic :: Security",
+    "Topic :: System :: Archiving",
+]
+dependencies = ["libpff-python>=20231205"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+build = ["pyinstaller>=6"]
+
+[project.scripts]
+email-date-range = "email_date_range.cli:entry_point"
+recover-pst = "email_date_range.recover:entry_point"
+
+[project.urls]
+Homepage = "https://github.com/oblomsky42-dev/email-date-range"
+Issues = "https://github.com/oblomsky42-dev/email-date-range/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "email_date_range.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["B023"]  # lambdas in _safe() are called immediately, inside the loop
